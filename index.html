@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IT Help Desk Ticketing System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside id="side">
+  <div class="brand"><span class="logo">🎧</span><b>IT Help Desk<br>Ticketing System</b></div>
+  <nav>
+    <button data-v="dashboard"><i>▦</i><span>Dashboard</span></button>
+    <button data-v="submit"><i>⬆</i><span>Submit Ticket</span></button>
+    <button data-v="tickets"><i>🎫</i><span>Ticket Management</span></button>
+    <button data-v="reports"><i>📊</i><span>Reports</span></button>
+    <button data-v="settings"><i>⚙</i><span>Settings</span></button>
+    <button data-v="profile"><i>👤</i><span>User Profile</span></button>
+  </nav>
+  <div class="help"><i>📞</i><div><b>Need Help?</b><small>Ask the assistant or contact support.</small><button id="help">Contact Support</button></div></div>
+</aside>
+
+<main>
+  <header>
+    <input id="gs" type="search" placeholder="Search tickets, users, or keywords...">
+    <div class="user"><span class="av">👤</span><div><b id="uname"></b><small id="urole"></small></div></div>
+  </header>
+
+  <section id="v-dashboard" class="view">
+    <div class="top"><div><h2 id="greet"></h2><p>Here's what's happening with your help desk today.</p></div>
+      <button class="primary" data-v="submit">+ Create New Ticket</button></div>
+    <div id="cards" class="cards"></div>
+    <div class="panel"><h3>Recent Tickets</h3><div id="recent" class="tw"></div></div>
+  </section>
+
+  <section id="v-submit" class="view">
+    <div class="panel narrow"><h3>Submit a Ticket</h3>
+      <p class="hint">Not sure which category fits? Describe the problem to the assistant (bottom-right).</p>
+      <form id="f-new" novalidate>
+        <div class="g2">
+          <label>Your name *<input name="name"></label>
+          <label>Email *<input name="email" type="email"></label>
+          <label>Phone (optional)<input name="phone"></label>
+          <label>Issue type *<select name="type" id="type"></select></label>
+          <label>Priority *<select name="priority"><option value="">Select priority…</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+          <label>Subject *<input name="subject"></label>
+        </div>
+        <label>Description *<textarea name="description" id="desc" rows="5" placeholder="What happened? What did you already try?"></textarea></label>
+        <div class="err" id="e-new"></div>
+        <button class="primary">Submit ticket</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="v-tickets" class="view">
+    <div class="panel"><h3>Ticket Management</h3>
+      <div id="filters" class="filters">
+        <input id="q" placeholder="Keyword…">
+        <select id="fs"><option value="">All statuses</option><option>Pending</option><option>In Progress</option><option>Resolved</option><option>Closed</option></select>
+        <select id="fp"><option value="">All priorities</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select>
+        <select id="fa"></select>
+        <label>From <input id="fd1" type="date"></label>
+        <label>To <input id="fd2" type="date"></label>
+        <select id="sort"><option value="date">Newest first</option><option value="old">Oldest first</option><option value="status">By status</option><option value="priority">By priority</option></select>
+        <button id="clr">Clear</button>
+      </div>
+      <p id="count" class="hint"></p>
+      <div id="tlist" class="tw"></div>
+    </div>
+  </section>
+
+  <section id="v-reports" class="view">
+    <div class="panel"><h3>Reports &amp; Summary</h3><div id="rstats" class="stats"></div></div>
+    <div class="g2c">
+      <div class="panel"><h3>Most common issues</h3><div id="rtop"></div></div>
+      <div class="panel"><h3>Audit log (latest activity)</h3><ul id="raudit" class="hist"></ul></div>
+    </div>
+  </section>
+
+  <section id="v-settings" class="view">
+    <div class="panel narrow"><h3>Technicians</h3>
+      <ul id="techs" class="hist"></ul>
+      <form id="f-tech"><label>New technician<input name="tname" placeholder="Full name"></label>
+        <div id="skills" class="skills"></div><button class="primary">Add technician</button></form>
+    </div>
+    <div class="panel narrow"><h3>Data</h3><p class="hint">Data is stored in this browser (localStorage), seeded from data.json.</p>
+      <button id="export">Export JSON</button> <button id="reset" class="danger">Reset to sample data</button></div>
+  </section>
+
+  <section id="v-profile" class="view">
+    <div class="panel narrow"><h3>User Profile</h3>
+      <form id="f-prof"><label>Display name<input name="pname"></label><label>Role<input name="prole"></label><button class="primary">Save profile</button></form></div>
+  </section>
+</main>
+
+<div id="modal"><div class="box"><button id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
+
+<button id="bot-btn" aria-label="Open assistant">💬</button>
+<div id="chat"><div class="chead">IT Assistant</div><div id="cmsgs"></div>
+  <form id="f-chat"><input id="cin" placeholder="e.g. my printer won't print" autocomplete="off"><button class="primary">Send</button></form></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

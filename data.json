@@ -1,0 +1,33 @@
+{
+  "user": { "name": "Tech Username", "role": "Support Agent" },
+  "categories": ["Hardware", "Software", "Network", "Account & Access", "Email", "Printer", "Security", "Other"],
+  "technicians": [
+    { "id": "T1", "name": "Liam Cruz", "skills": ["Hardware", "Printer"] },
+    { "id": "T2", "name": "Ana Reyes", "skills": ["Software", "Email"] },
+    { "id": "T3", "name": "Marco Santos", "skills": ["Network", "Security"] },
+    { "id": "T4", "name": "Sofia Lim", "skills": ["Account & Access", "Other"] }
+  ],
+  "knowledgeBase": [
+    { "title": "Network / VPN problems", "category": "Network", "keywords": ["wifi", "wi-fi", "internet", "network", "vpn", "connect", "offline"],
+      "steps": ["Check that Wi-Fi or the network cable is connected.", "Restart your router or toggle Airplane mode on and off.", "Disconnect and reconnect to the VPN.", "Restart your computer and try again."] },
+    { "title": "Printer not working", "category": "Printer", "keywords": ["printer", "print", "paper", "toner", "scan"],
+      "steps": ["Check power, paper and toner.", "Make sure the correct printer is selected.", "Clear the print queue and restart the printer.", "Reinstall the printer driver if it still fails."] },
+    { "title": "Password or login issues", "category": "Account & Access", "keywords": ["password", "login", "log in", "locked", "account", "access", "forgot"],
+      "steps": ["Check that Caps Lock is off.", "Use the 'Forgot password' link to reset it.", "Wait 15 minutes if your account is locked.", "Submit a ticket if you still cannot sign in."] },
+    { "title": "Slow or frozen computer", "category": "Hardware", "keywords": ["slow", "freeze", "frozen", "hang", "lag", "boot", "crash", "laptop", "computer", "monitor", "keyboard", "mouse"],
+      "steps": ["Save your work and restart the computer.", "Close apps you are not using.", "Check free disk space and install pending updates.", "Report it if the problem keeps coming back."] },
+    { "title": "Email problems", "category": "Email", "keywords": ["email", "outlook", "mail", "inbox", "attachment", "spam"],
+      "steps": ["Check your internet connection.", "Sign out and back in to your mail app.", "Check your mailbox storage quota.", "Try webmail to see if the problem is with the app."] },
+    { "title": "Software installation / errors", "category": "Software", "keywords": ["install", "software", "app", "update", "license", "error", "excel", "word", "program"],
+      "steps": ["Restart the application and your computer.", "Make sure the app is up to date.", "Note the exact error message.", "Submit a ticket with the error and the software name for installation requests."] },
+    { "title": "Suspicious email or virus", "category": "Security", "keywords": ["virus", "malware", "phishing", "suspicious", "hacked", "ransomware", "scam"],
+      "steps": ["Do not click links or open attachments.", "Disconnect from the network if you think you are infected.", "Do not enter passwords on unknown pages.", "Submit a High priority Security ticket right away."] }
+  ],
+  "tickets": [
+    { "id": "HD-1001", "name": "Maria Santos", "email": "maria.santos@company.com", "phone": "0917-000-1001", "type": "Network", "subject": "Unable to access company VPN", "description": "VPN client shows 'connection timed out' since this morning.", "priority": "High", "status": "Pending", "assigned": "", "resolution": "", "hoursAgo": 3 },
+    { "id": "HD-1002", "name": "John Reyes", "email": "john.reyes@company.com", "phone": "", "type": "Software", "subject": "Software installation request", "description": "Need Adobe Acrobat installed on my workstation.", "priority": "Medium", "status": "In Progress", "assigned": "Ana Reyes", "resolution": "", "hoursAgo": 30, "respondedAfterH": 2 },
+    { "id": "HD-1003", "name": "Carla Gomez", "email": "carla.gomez@company.com", "phone": "0918-555-0303", "type": "Printer", "subject": "Printer on 2nd floor jams", "description": "Paper jams every time we print double-sided.", "priority": "Low", "status": "Resolved", "assigned": "Liam Cruz", "resolution": "Removed stuck paper and replaced the pickup roller.", "hoursAgo": 60, "respondedAfterH": 1.5 },
+    { "id": "HD-1004", "name": "Paolo Dizon", "email": "paolo.dizon@company.com", "phone": "", "type": "Account & Access", "subject": "Account locked after password change", "description": "Cannot log in to the HR portal after changing my password.", "priority": "High", "status": "Closed", "assigned": "Sofia Lim", "resolution": "Unlocked account and reset credentials.", "hoursAgo": 200, "respondedAfterH": 0.5 },
+    { "id": "HD-1005", "name": "Ellen Tan", "email": "ellen.tan@company.com", "phone": "", "type": "Network", "subject": "Wi-Fi drops in meeting room B", "description": "Wi-Fi disconnects every few minutes during video calls.", "priority": "Medium", "status": "In Progress", "assigned": "Marco Santos", "resolution": "", "hoursAgo": 100, "respondedAfterH": 4 }
+  ]
+}
